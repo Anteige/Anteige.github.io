@@ -1,38 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('./images/g71a709ee5.jpg');
+  min-height: 100%;
+}
+</style>
 <body>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
-  <img class="w3-image" src="./images/g3eb5bfb6a.jpg" alt="Me" width="1500" height="600">
-  <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
-    <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Antoine Gaulin</h1>
-    <h5 class="w3-hide-large" style="white-space:nowrap">Antoine Gaulin</h5>
-    <h3 class="w3-hide-medium w3-hide-small">Développeur</h3>
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Accueil</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">À propos</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
   </div>
-</header>
+</nav>
 
-<!-- Navbar on small screens -->
-<div class="w3-center w3-light-grey w3-padding-16 w3-hide-large w3-hide-medium">
-<div class="w3-bar w3-light-grey">
-  <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#portfolio" class="w3-bar-item w3-button">Portfolio</a>
-  <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-</div>
-</div>
-<!-- Page content -->
-<div class="w3-content w3-padding-large w3-margin-top" id="portfolio">
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
 
-  <!-- Images (Portfolio) -->
-  <iframe width="1000" height="500" src="https://www.youtube.com/embed/9-Fl4NRe2JU" allowfullscreen></iframe>
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Antoine Gaulin</b></h1>
+    <p>Programmeur</p>
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> Télécharger mon CV
+    </button>
+  </header>
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey">Mon Portfolio</h2>
+    <hr class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9-Fl4NRe2JU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/y4CQ_T4Srzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>À propos</h2>
+    <hr class="w3-opacity">
+    <p>À la suite de mes études à Polytechnique Montréal, j’ai étudié au D.E.S.S. en administration des affaires à HEC Montréal. Je souhaitais y développer une expertise en gestion afin de mettre en valeur mon leadership et mon sens de l'organisation. J'ai acquis aussi des compétences en gestion de projet.
+Enfin, je suis reconnu pour ma capacité d'analyse et ma créativité.</p>
+
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24">Ma réputation</h3>
+    <p><span class="w3-large w3-text-black w3-margin-right">Natalie Morcos</span> Level Artist</p>
+    <p>I worked with Antoine as part of the Ubisoft Game Lab competition. Our team consisted of three different universities collaborating to create a game within 10 weeks. Communication and flexibility were very important for the project to succeed. From my experience, Antoine is a hard-working teammate, has excellent communication and takes a lot of initiative. He loves his work and is very motivated. During the project life, he took ownership of different tasks and stepped in to help the team when we had questions or concerns. He was always on point, and it was a pleasure working with him.</p><br>
+   
+    <p><span class="w3-large w3-text-black w3-margin-right">Olivier Gendreau</span> Maître d'enseignement en génie logiciel</p>
+    <p>J'ai enseigné à Antoine dans le cours de Conception de jeux vidéo et je l'ai supervisé dans le cadre de son projet intégrateur final, au sein duquel il a développé dans une équipe multidisciplinaire un excellent jeu vidéo pour la compétition Universitaire Ubisoft 2020. Ce que j'ai le plus apprécié d'Antoine sont ses compétences techniques, son implication et sa pensée latérale, particulièrement efficaces dans une équipe multidisciplinaire. J'ai beaucoup apprécié superviser Antoine.</p><br>
+ 
+  <!-- End About Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Contactez-moi</h2>
+    <hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>Laval, Canada</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>(514) 705-6699</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i>antoine.gaulin@outlook.com</p><br>
+    </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+
+     <a href="https://www.facebook.com/antoine.gaulin"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+     <a href="https://www.linkedin.com/in/antoinegaulin"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+
+  <!-- End footer -->
+
+<!-- END PAGE CONTENT -->
 </div>
 
-<!-- End page content -->
-</div>
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
 </body>
 </html>
